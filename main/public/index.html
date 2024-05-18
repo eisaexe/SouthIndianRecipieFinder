@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>South indian recipe</title>
+</head>
+<body>
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="subtitle">South Indian Recipe Finder</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" id="search" placeholder="What do you want to eat?">
+            <div class="fa fa-times" onclick="clearInput()"></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+    <div class="result">
+        <h1>Your Search Result: </h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="card-grid">
+        <div class="food-list" id="food-list">
+            <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+            
+            <!-- Existing meals -->
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/idili.jpeg">
+                </div>
+                <div class="card-body">
+                    <h3>Idli</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="sisig">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/dosa.jpeg">
+                </div>
+                <div class="card-body">
+                    <h3>Dosa</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="adobo">Get Recipe</button>
+                </div>
+            </div>
+        
+            <!-- New meals -->
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/Medu-Vada.webp">
+                </div>
+                <div class="card-body">
+                    <h3>Medu Vada</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="newMeal1">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/rasam.jpeg">
+                </div>
+                <div class="card-body">
+                    <h3>Rasam</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="newMeal2">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/biryani.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Biryani</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="newMeal3">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="./assets/img/Kerala-Fish-Curry.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Fish curry</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn get-recipe" data-recipe="newMeal4">Get Recipe</button>
+                </div>
+            </div>
+            
+        
+
+    <!-- Recipe Details -->
+    <div class="meal-detail" id="meal-detail">
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="meal-content">
+            <h2 class="meal-name">Idli</h2>
+            <div class="meal-about">
+                <h3 class="meal-title-about">About Meal</h3>
+                <p class="meal-descript-about">Idli is one of the most healthiest and popular South Indian breakfast dish. These are soft, light, fluffy steamed round cakes made with a ground, fermented rice and lentil batter. Here I share my foolproof recipe with video and step-by-step photos that will help you in making the best idli. This Idli recipe is one of the earliest recipe from the blog which has been tried and tested with great results by many of our readers. </p>
+            </div>
+            <div class="meal-instruct">
+                <h3>Ingredients:</h3>
+                <p>Rice Batter</p>
+                <h3>Instructions:</h3>
+                <p>In a bowl or pan take 1 cup parboiled rice and 1 cup regular rice. Here I have used the Indian variety of sona masuri rice along with parboiled rice.</p>
+                <p>With Idli Rava: A second easier way is to use idli rava with urad dal. Idli rava is coarsely ground idli rice and is easily available in shops and online.
+                    Soaking rice and lentils: For making simple traditional idli, both the rice and the urad dal are rinsed a couple of times with fresh water and soaked separately for 4 to 5 hours.
+                    Quality of rice and urad dal: Make sure to use both rice and urad dal within their shelf-period. Always use urad dal which is fresh and within its shelf-life. Aged urad dal does not ferment well and makes the idli dense. 
+                    Grinding: Then the lentils (urad dal) are ground to a soft, fluffy batter and the rice to a semi-fine consistency. Both the batters are mixed and allowed to ferment.
+                    Grinding Equipments: The grinding of the batters, can be done in a table-top stone wet-grinder or in a mixer-grinder. Most South Indian families have a table top stone grinder that they trust to make a fluffy idli batter.
+                    Table top stone grinder: Grinding in a stone grinder is helpful if making a large quantity of idli batter. The advantage of grinding in a stone grinder is that the urad dal batter gets ground really well and thus the idli batter ferments also well.
+                    
+                    The amount of water to be added in a stone-grinder is more than what is added in a mixer-grinder.
+                    
+                    For ½ cup soaked urad dal, you can add about 1 cup water. Add water in parts while grinding urad dal. For 2 cups of soaked rice, add about 1.5 to 2 cups of water.
+                    Mixer-grinder: The lentils also grind well in a mixer-grinder or heavy duty blender like Vitamix. For smaller quantities, a mixer-grinder or blender works like a charm.
+                    
+                    Everyone does not have a stone grinder. So I have shared the detailed method on how to grind the batter in a mixer-grinder with plenty of tips and suggestions in the step-by-step guide below.
+                    
+                    I have both a stone grinder and a mixer grinder. For smaller quantities, I use the mixie for grinding and for larger quantities I use the stone grinder.
+                    Fermentation: Both the ground lentil batter and rice batter are mixed thoroughly. Then the batter is kept to ferment overnight or for 8 to 9 hours or more till the batter doubles or triples in volume having a pleasant sour aroma. The fermentation largely depends upon the temperature and climate. A warm temperature is conducive for a good fermentation in the batter.
+                    Steaming: Special pans are used to steam the idli. You can buy these pans online. This idli pan is brushed or greased with some oil. The batter is poured in the pan and then steamed.
+                    Steaming time: The steaming time varies from 12 to 15 minutes. Idli should never be oversteamed as then they become dry and dense.</p>
+               
+            </div>   
+            <div class="meal-img">
+                <img src="./assets/img/idili.jpeg" alt="">
+            </div>
+            <div class="meal-link">
+                <a href="https://www.youtube.com/watch?v=Ayo80PIb-Qg&pp=ygULaWRsaSByZWNpcGU%3D" class="meal-link-btn">Watch Video</a>
+            </div>
+        </div>
+    </div>
+    <!-- Start -->
+    <div class="second-meal-detail" id="second-meal-detail"><right>
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn" onclick="closeBtn()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="meal-content">
+            <h2 class="meal-name">Dosa</h2>
+            <div class="meal-about">
+                <h3 class="meal-title-about">About Meal</h3>
+                <p class="meal-descript-about">Dosa is the ever-popular South Indian breakfast of crispy crepes made with ground rice and lentil batter that is fermented.</p>
+            </div>
+            <div class="meal-instruct">
+                <h3>Ingredients:</h3>
+                <p>rice batter and some salt for taste</p>
+                <h3>Instructions:</h3>
+                <p>Soak the rice in a large bowl with enough water to cover it by at least 2 inches for about 4-6 hours.
+                    Soak the urad dal and fenugreek seeds in another bowl with enough water to cover them for about 4-6 hours.</p>
+                <p>Grind the Rice</p>
+                <p>Mix and Ferment:</p>
+
+                    <p>Combine the urad dal batter and the rice batter in a large bowl. Add salt and mix well.
+                    The batter should have a thick pouring consistency, like pancake batter.</p>
+                    <p>Heat a non-stick or cast-iron griddle (tawa) over medium heat.</p>
+                    <p>Pour a ladleful of batter onto the center of the griddle.
+                        Using the back of the ladle, spread the batter in a circular motion from the center outwards to form a thin crepe.
+                        </p>
+            </div>
+            <div class="meal-img">
+                <img src="./assets/img/dosa.jpeg" alt="">
+            </div>
+            <div class="meal-link">
+                <a href="https://www.youtube.com/watch?v=KPFAAjONfmk&pp=ygUUZG9zYSBtYWtpbmcgdGltZWxhcHM%3D" class="meal-link-btn">Watch Video</a>
+            </div>
+        </div>
+    </div>
+
+<div class="meal-detail" id="new-meal-detail1">
+    <button type="button" class="btn recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="meal-content">
+        <h2 class="meal-name">Medu Vada</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Medu Vada is a popular South Indian breakfast snack of donut shaped lentil fritters that are fluffy, crispy, soft and delicious.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+           <p> 1 tablespoon chopped curry leaves</p>
+           <p> 1 teaspoon finely chopped green chillies</p>
+           <p>1 teaspoon finely chopped ginger</p>
+           <p> 1 pinch asafoetida</p>
+           <p> ½ teaspoon cumin seeds</p>
+           <p> ½ teaspoon lightly crushed black pepper – can use whole peppercorns as well. The addition of black pepper gives a good taste but is optional.</p>
+           <p>½ teaspoon salt or as required</p>
+            <h3>Instructions:</h3>
+            <p>take a bowl of water. Apply some water from the bowl on both your palms. Take some batter in your right palm from the bowl. Give it a round shape by moving it in a circular position in the right hand.</p>
+            <p>With your thumb make a hole in the center. You can also use banana leaves or zip lock bags to give the medu vada its doughnut shape.</p>
+            <p>In a kadai, heat oil over medium heat. Once the oil becomes hot, slide the medu vada gently into the hot oil.</p>
+            <p>Once the vada or garelu are slightly golden and the batter has firmed up and looks crispy, then gently turn over with a slotted spoon and continue to fry.</p>
+            <p> Continue to fry the vada, turning over as needed.</p>
+        </div>
+        <div class="meal-img">
+            <img src="./assets/img/Medu-Vada.webp" alt="">
+        </div>
+        <div class="meal-link">
+            <a href="https://www.youtube.com/watch?v=kbA6oksGIXo&pp=ygUQbWVkdSB2YWRhIHJlY2lwZQ%3D%3D" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+
+<div class="meal-detail" id="new-meal-detail2">
+    <button type="button" class="btn recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="meal-content">
+        <h2 class="meal-name">Rasam</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Rasam is a tangy, spiced, herby and soupy preparations from the South Indian cuisine. Rasam is a staple in many South Indian households and has a base of various herbs, spices, lentils, veggies/fruits and tamarind.</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+           <p> cumin, mustard seeds, black pepper, garlic, curry leaves, coriander leaves, and tamarind </p>
+            <h3>Instructions:</h3>
+            <p> Soak 1 lemon sized tamarind (approx 1 tablespoon tightly packed seedless tamarind) in ½ cup warm water for 20 to 30 mins.</p>
+            <p> Later squeeze the soaked tamarind to a pulp. Strain and keep aside. In the below photo, the tamarind pulp is not strained.</p>
+            <p>In a dry grinder or coffee grinder, ground 3 teaspoon cumin seeds, 2 teaspoon whole black pepper, and 6 to 7 roughly chopped garlic (medium-sized) to a semi-fine consistency.</p>
+            <p>Then add the semi-coarsely ground cumin seeds, black pepper and garlic, and ½ teaspoon turmeric powder.</p>
+            <p> Turn off the heat and add 2 to 3 tablespoons of chopped coriander leaves.</p>
+            <p>Stir and serve rasam hot with steamed rice or as a soup.</p>
+        </div>
+        <div class="meal-img">
+            <img src="./assets/img/rasam.jpeg" alt="">
+        </div>
+        <div class="meal-link">
+            <a href="https://www.youtube.com/watch?v=BnB9V7s3Xsw&pp=ygUMcmFzYW0gcmVjaXBl" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+<div class="meal-detail" id="new-meal-detail3">
+    <button type="button" class="btn recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="meal-content">
+        <h2 class="meal-name">Biryani</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">Biryani is a celebration of all that is great about Indian food – the heady aromas, the vibrant colours, the fluffy rice and those addictive curry flavours. Make this Chicken Biryani with your protein of choice – or try a vegetable biryani!</p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+           <p> 4 tablespoons vegetable oil, divided
+
+            4 small potatoes, peeled and halved
+            
+            2 large onions, finely chopped
+            
+            2 cloves garlic, minced
+            
+            1 tablespoon minced fresh ginger root
+            
+            2 medium tomatoes, peeled and chopped
+            
+            1 teaspoon salt
+            
+            1 teaspoon ground cumin
+            
+            ½ teaspoon chili powder
+            
+            ½ teaspoon ground black pepper
+            
+            ½ teaspoon ground turmeric
+            
+            2 tablespoons plain yogurt
+            
+            2 tablespoons chopped fresh mint leaves
+            
+            ½ teaspoon ground cardamom
+            
+            1 (2 inch) piece cinnamon stick
+            
+            3 pounds boneless, skinless chicken pieces cut into chunks</p>
+            <h3>Instructions:</h3>
+            <p>Heat 2 tablespoons of oil in a large skillet. Fry potatoes in hot oil until lightly browned, about 3 to 5 minutes. Remove to a paper towel-lined plate to drain; set aside.</p>
+            <p>Add remaining 2 tablespoons of oil to the skillet. Add onions, garlic, and fresh ginger; cook and stir until onion is soft and golden. Add tomatoes, salt, cumin, chili powder, pepper, and turmeric; cook, stirring constantly, for 5 minutes.            </p>
+            <p>Add chicken and stir well to coat. Cover and cook over very low heat until chicken is tender, 35 to 45 minutes. There should only be a little very thick gravy left when chicken is finished cooking. If necessary cook uncovered for a few minutes to reduce the gravy.</p>
+            <p>Heat oil in a large skillet. Add onion; cook and stir until golden. Add cardamom pods, cloves, cinnamon stick, ground ginger, and saffron; stir in rice until coated with spices.
+
+            </p>
+            <p> Add chicken mixture and potatoes; stir gently to combine. Bring to a boil.</p>
+            <p>Reduce heat to very low, cover with a tight-fitting lid, and steam for 20 minutes without lifting the lid or stirring.
+
+            </p>
+        </div>
+        <div class="meal-img">
+            <img src="./assets/img/biryani.jpg" alt="">
+        </div>
+        <div class="meal-link">
+            <a href="https://www.youtube.com/watch?v=uygb9O-MDPw&pp=ygUOYmlyeWFuaSByZWNpcGU%3D" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="meal-detail" id="new-meal-detail4">
+    <button type="button" class="btn recipe-close-btn" onclick="closeBtn()">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="meal-content">
+        <h2 class="meal-name">Fish Curry</h2>
+        <div class="meal-about">
+            <h3 class="meal-title-about">About Meal</h3>
+            <p class="meal-descript-about">This spicy and tangy Indian fish curry is a simple and at the same time tasty dish. It goes very well with white rice, idli and dosa. </p>
+        </div>
+        <div class="meal-instruct">
+            <h3>Ingredients:</h3>
+           <p> King Fish Slices: The star of the dish, the fish slices add a rich and meaty texture to the curry, absorbing all the flavorful spices and seasonings.
+            Sesame Oil or Coconut Oil: Adds a nutty and aromatic flavor to the curry, enhancing the overall taste.
+            Mustard Seeds: Provides a nutty and slightly spicy flavor, adding depth to the dish.
+            Fenugreek Seeds: Lends a slightly bitter and sweet taste, elevating the overall flavor profile of the curry.
+            Garlic Pods and Shallots: These aromatic vegetables add a savory and slightly sweet taste to the curry, enhancing its depth of flavor.
+            Curry Leaves: Adds a unique, citrusy, and slightly nutty flavor, contributing to the authentic taste of the fish curry.</p>
+            <h3>Instructions:</h3>
+            <p> Firstly, clean and wash the fish slices properly to ensure they are ready for cooking.</p>
+                <p> Soak the tamarind in warm water and extract the juice, as this will add a tangy flavor to the curry.</p>
+                    <p>  Grind the green chilies, cumin seeds, tomatoes, shallots, and curry leaves to create a smooth paste for the curry base.</p>
+                        <p>  Heat a pan with oil over medium heat.</p>
+                            <p> When the oil heats, add mustard seeds and fry until spluttering.</p>
+                                <p> Then add fenugreek seeds and fry until browned.</p>
+                                    <p>  Add garlic pods, chopped shallots, and curry leaves and sauté until golden brown.</p>
+                                        <p> Add red chilli powder, coriander powder, turmeric powder, and salt. Sauté well over low heat until a nice aroma comes.</p>
+                                            <p> Add the ground tomato paste and sauté well until the oil oozes out from the masala.</p>
+                                                <p> Add water and tamarind extract and mix well. Cover and cook over low heat until it starts to boil.</p>
+                                                    <p> Once boiled, add the fish slices and mango slices. Cover and cook for 10 to 15 minutes over low heat or until the fish pieces are cooked and the oil oozes out from the curry.</p>
+                                                        <p>  Finally, add some fresh leaves and serve hot with white rice.</p>
+        </div>
+        <div class="meal-img">
+            <img src="./assets/img/Kerala-Fish-Curry.jpg" alt="">
+        </div>
+        <div class="meal-link">
+            <a href="https://www.youtube.com/watch?v=Pg7qj9_auko&pp=ygURZmlzaCBjdXJyeSByZWNpcGU%3D" class="meal-link-btn">Watch Video</a>
+        </div>
+    </div>
+</div>
+</div>
+   
+    <script src="./assets/index.js"></script>
+</body>
+</html>
